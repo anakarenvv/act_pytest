@@ -10,8 +10,16 @@ def test_base_negativa():
 
 def test_altura_negativa():
     with pytest.raises(ValueError):
-        calcular_area_triangulo(5, -1)
+        calcular_area_triangulo(5, -2)
+
+def test_base_y_altura_negativas():
+    with pytest.raises(ValueError):
+        calcular_area_triangulo(-4, -3)
 
 def test_base_cero():
     with pytest.raises(ValueError):
         calcular_area_triangulo(0, 10)
+
+def test_altura_cero():
+    with pytest.raises(ValueError):
+        calcular_area_triangulo(5, 0)
